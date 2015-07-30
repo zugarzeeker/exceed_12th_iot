@@ -4,6 +4,7 @@ const char* ssid     = "YOUR-SSID";
 const char* password = "YOUR-PASSWORD";
 const char* host = "research27.ml";
 const int httpPort = 8888;
+const String group = "Staff_eXceed";
 
 WiFiClient client;
 String serialRecieveData = "";
@@ -75,13 +76,13 @@ void setHttpRecieveData() {
 }
 
 void readHttpRequest() {
-	String url = "/read/web/";
+	String url = group + "/read/web/";
 	httpRequest(url);
 	setHttpRecieveData();
 }
 
 void writeHttpRequest(String value) {
-	String url = "/write/board/" + value;
+	String url = group + "/write/board/" + value;
 	httpRequest(url);
 }
 
@@ -89,7 +90,6 @@ void setSerialRecieveData() {
 	serialRecieveData = Serial.readStringUntil('\r');
 	serialRecieveData.replace("\r", "");
 	serialRecieveData.replace("\n", "");
-
 }
 
 void serialEvent() {
