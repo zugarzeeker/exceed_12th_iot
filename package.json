@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lukyth/exceed_12th_iot.git"
+    "url": "git+https://github.com/SzNeUrTo/exceed_12th_iot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lukyth/exceed_12th_iot/issues"
+    "url": "https://github.com/SzNeUrTo/exceed_12th_iot/issues"
   },
-  "homepage": "https://github.com/Lukyth/exceed_12th_iot#readme",
+  "homepage": "https://github.com/SzNeUrTo/exceed_12th_iot#readme",
   "dependencies": {
     "express": "^4.13.1"
   }
