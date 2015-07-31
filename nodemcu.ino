@@ -1,10 +1,10 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "YOUR-SSID";
-const char* password = "YOUR-PASSWORD";
-const char* host = "research27.ml";
-const int httpPort = 8888;
-const String group = "Staff_eXceed";
+const char* ssid     = "eXceed IOT 3";
+const char* password = "";
+const char* host = "exceed.cupco.de";
+const int httpPort = 80;
+const String group = "YOUR-GROUP";
 
 WiFiClient client;
 String serialRecieveData = "";
@@ -76,13 +76,13 @@ void setHttpRecieveData() {
 }
 
 void readHttpRequest() {
-	String url = group + "/read/web/";
+	String url = "/iot/" + group + "/web";
 	httpRequest(url);
 	setHttpRecieveData();
 }
 
 void writeHttpRequest(String value) {
-	String url = group + "/write/board/" + value;
+	String url = "/iot/" + group + "/board/" + value;
 	httpRequest(url);
 }
 
