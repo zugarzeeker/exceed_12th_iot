@@ -3,8 +3,8 @@
 const char* ssid     = "eXceed IOT 3";
 const char* password = "";
 const char* host = "exceed.cupco.de";
-const int httpPort = 80;
-const String group = "YOUR-GROUP";
+const int httpPort = 1234;
+const String group = "Staff_eXceed";
 
 WiFiClient client;
 String serialRecieveData = "";
@@ -76,13 +76,13 @@ void setHttpRecieveData() {
 }
 
 void readHttpRequest() {
-	String url = "/iot/" + group + "/web";
+	String url = "/" + group + "/read/web/";
 	httpRequest(url);
 	setHttpRecieveData();
 }
 
 void writeHttpRequest(String value) {
-	String url = "/iot/" + group + "/board/" + value;
+	String url = "/" + group + "/write/board/" + value;
 	httpRequest(url);
 }
 
@@ -90,6 +90,7 @@ void setSerialRecieveData() {
 	serialRecieveData = Serial.readStringUntil('\r');
 	serialRecieveData.replace("\r", "");
 	serialRecieveData.replace("\n", "");
+
 }
 
 void serialEvent() {
