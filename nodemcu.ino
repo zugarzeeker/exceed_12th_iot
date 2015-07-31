@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "eXceed IOT 3";
+const char* ssid     = "eXceed IOT 2";
 const char* password = "";
 const char* host = "exceed.cupco.de";
 const int httpPort = 80;
@@ -18,6 +18,7 @@ void waitForSerialData() {
 	while (!hasSerialDataCome()) {
 		delay(500);
 	}
+	Serial.flush();
 }
 
 bool isNotWifiConnect() {
@@ -45,7 +46,7 @@ void setup() {
 void httpRequest(String url) {
 	client.setTimeout(50);
 	client.connect(host, httpPort);
-	client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+	client.print(String("GET ") + url + " HTTP/1.0\r\n" +
 		"Host: " + host + "\r\n" +
 		"Connection: close\r\n\r\n");
 	delay(50);
@@ -54,7 +55,7 @@ void httpRequest(String url) {
 }
 
 bool isNotHeaderData(int countLine) {
-	return countLine > 8;
+	return countLine > 7;
 }
 
 String getEachLineDataHttp() {
