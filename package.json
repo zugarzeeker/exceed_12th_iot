@@ -1,0 +1,22 @@
+{
+  "name": "exceed_12th_iot",
+  "version": "1.0.0",
+  "description": "![ScreenShot](https://raw.githubusercontent.com/SzNeUrTo/exceed_12th_iot/master/screenshot.png)",
+  "main": "server_for_test.js",
+  "scripts": {
+    "test": "node server_for_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SzNeUrTo/exceed_12th_iot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SzNeUrTo/exceed_12th_iot/issues"
+  },
+  "homepage": "https://github.com/SzNeUrTo/exceed_12th_iot#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
+}
